@@ -328,8 +328,8 @@ export default function InvitationClient({ slug }: Props) {
               className="invite-button invite-button--ghost"
               onClick={openDecisionModal}
             >
-              <RefreshCcw className="invite-button-icon" />
-              No podre asistir 😣
+              
+              No podre asistir 😔
             </button>
           </motion.section>
         ) : null}
