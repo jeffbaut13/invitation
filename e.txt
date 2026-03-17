@@ -1,0 +1,191 @@
+Quiero que construyas una aplicación web usando Next.js que lea datos desde un Google Sheet y genere páginas dinámicas para confirmar asistencia a un evento.
+
+La aplicación debe funcionar usando una URL con parámetro dinámico como:
+
+pagina.com/jefersson_bautista
+
+Ese parámetro será el identificador del invitado.
+
+El sistema debe buscar ese identificador dentro de un Google Sheet y renderizar una página personalizada con su información.
+
+--------------------------------
+STACK Y LIBRERÍAS
+--------------------------------
+
+Frontend:
+- Next.js (App Router)
+- framer-motion
+- lucide-react
+- taildwind
+
+Backend:
+- Next.js API Routes
+- googleapis@105
+- @google-cloud/local-auth@2.1.0
+
+Credenciales:
+- El archivo de credenciales está en /credential.json
+
+Google Sheet ID:
+1DEjNQFW62ICIjcqT7g1JeAPwCIMpG1Hdt9Ed6_BXAY0
+
+--------------------------------
+ESTRUCTURA DE DATOS EN GOOGLE SHEETS
+--------------------------------
+
+Las columnas del sheet son:
+
+NOMBRE
+WHATSAPP
+DETALLE
+ASISTENCIA
+
+--------------------------------
+FUNCIONAMIENTO GENERAL
+--------------------------------
+
+1. La aplicación recibe un slug desde la URL.
+
+Ejemplo:
+pagina.com/jefersson_bautista
+
+2. Ese slug debe buscarse en la columna NOMBRE del Google Sheet.
+
+3. Si existe coincidencia:
+   - Mostrar una página con:
+     - NOMBRE
+     - DETALLE
+
+4. La página debe tener dos botones:
+
+- "Asistir"
+- "No asistir"
+
+5. Cuando el usuario presiona uno de los botones:
+
+Debe actualizar la columna ASISTENCIA del Google Sheet con:
+
+- "asistir"
+o
+- "no asistir"
+
+--------------------------------
+LÓGICA DE ESTADOS
+--------------------------------
+
+Cuando la página carga debe verificar el valor de la columna ASISTENCIA.
+
+CASO 1:
+ASISTENCIA está vacía
+
+Mostrar la página inicial con los botones:
+"Asistir" y "No asistir".
+
+CASO 2:
+ASISTENCIA = "asistir"
+
+Mostrar una página de agradecimiento que diga algo como:
+"Gracias por confirmar tu asistencia".
+
+Debe incluir un botón:
+"Cambiar decisión"
+
+CASO 3:
+ASISTENCIA = "no asistir"
+
+Mostrar una página que diga:
+"Lamentamos que no puedas asistir".
+
+Debe incluir un botón:
+"Cambiar decisión".
+
+--------------------------------
+CAMBIO DE DECISIÓN
+--------------------------------
+
+Si el usuario presiona "Cambiar decisión":
+
+Mostrar un alert de confirmación.
+
+Si confirma:
+Volver a mostrar los botones iniciales
+para elegir nuevamente.
+
+--------------------------------
+ENDPOINTS BACKEND NECESARIOS
+--------------------------------
+
+Crear endpoints en Next.js API para:
+
+GET invitado
+- Recibe slug
+- Busca en Google Sheets
+- Retorna NOMBRE, DETALLE y ASISTENCIA
+
+POST asistencia
+- Recibe slug
+- Recibe decisión ("asistir" o "no asistir")
+- Actualiza la columna ASISTENCIA en el Google Sheet
+
+--------------------------------
+INTERFAZ
+--------------------------------
+
+Usar:
+
+- framer-motion para animaciones simples
+- lucide-react para íconos
+
+La interfaz debe ser simple:
+- Nombre del invitado
+- Detalle
+- Botones grandes de acción
+
+--------------------------------
+REGLAS DE EJECUCIÓN
+--------------------------------
+
+MUY IMPORTANTE:
+
+No ejecutes comandos de consola directamente.
+
+Debido a restricciones del computador, debes:
+
+1. Decirme exactamente qué comando debo ejecutar.
+2. Esperar mi confirmación.
+3. Luego continuar con el siguiente paso.
+
+--------------------------------
+FLUJO DE TRABAJO QUE QUIERO QUE SIGAS
+--------------------------------
+
+Paso 1
+Crear proyecto Next.js con las librerías necesarias.
+
+Paso 2
+Configurar conexión con Google Sheets API.
+
+Paso 3
+Crear función backend para leer datos del sheet.
+
+Paso 4
+Crear endpoint para actualizar asistencia.
+
+Paso 5
+Crear ruta dinámica:
+app/[slug]/page.tsx
+
+Paso 6
+Implementar lógica de estados (asistir / no asistir).
+
+Paso 7
+Crear página de agradecimiento.
+
+--------------------------------
+REGLA FINAL
+--------------------------------
+
+No me des recomendaciones o sugerencias.
+
+Si detectas mejoras técnicas puedes implementarlas directamente,
+solo debes confirmarme si debo instalar algo o probar algo en el navegador.
