@@ -17,7 +17,7 @@ const metadataBase = siteUrl ? new URL(siteUrl) : undefined;
 
 export const metadata: Metadata = {
   metadataBase,
-  title: "Revelacion de Nuestro Hermoso Bebe - Te Esperamos",
+  title: "Invitación a la revelación de Nuestro Hermoso Bebe este 29 marzo",
   description: "Acompañanos en este momento tan especial para revelar el sexo de nuestro hermoso bebe. Queremos compartir esta alegria contigo en nuestra celebracion.",
   openGraph: {
     type: "website",
