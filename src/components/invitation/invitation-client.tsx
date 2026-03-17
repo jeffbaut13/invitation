@@ -231,7 +231,7 @@ export default function InvitationClient({ slug }: Props) {
 
               <div className="invite-confirmacion flex justify-center items-center flex-col justify-between">
                 <p className="invite-detail">
-                  El baby te agradecera si le regalas:
+                  Nuestro baby te agradecera si le regalas:
                 </p>
                 <p className="invite-detail invite-detail--bold">
                   {guest.detalle}
