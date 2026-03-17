@@ -303,13 +303,14 @@ export default function InvitationClient({ slug }: Props) {
               style={{ margin: "0.7rem 0" }}
               className="flex flex-col items-center justify-center  "
             >
+              <p className="invite-detail">
+                Te esperamos el <strong>29 de marzo a las 3:00 pm</strong>
+              </p>
               <p className="invite-detail">Te confirmo la direccion</p>
               <p className="invite-detail">
                 <strong>Calle 38 sur # 29-20</strong>
               </p>
-              <p className="invite-detail">
-                Te esperamos el <strong>29 de marzo a las 3:00 pm</strong>
-              </p>
+              
               <a
                 href="https://maps.app.goo.gl/bpxE7p8hkyPiU3q46?g_st=aw"
                 target="_blank"
