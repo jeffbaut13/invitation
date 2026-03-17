@@ -18,12 +18,12 @@ export const metadata: Metadata = {
   metadataBase,
   title: "Invitación a la revelación de Nuestro Hermoso Bebe 29 marzo",
   description:
-    "Queremos compartir esta alegria contigo en nuestra celebracion de revelación de nuestro bebe",
+    "Queremos compartir contigo la celebracion de revelación de sexo de nuestro bebe.",
   openGraph: {
     type: "website",
     title: "Invitación a la revelación de Nuestro Hermoso Bebe 29 marzo",
     description:
-      "Queremos compartir esta alegria contigo en nuestra celebracion de revelación de nuestro bebe.",
+      "Queremos compartir contigo la celebracion de revelación de sexo de nuestro bebe.",
     images: [
       {
         url: "https://invitation-weld-two.vercel.app/img-1200.png",
@@ -37,7 +37,7 @@ export const metadata: Metadata = {
     card: "summary_large_image",
     title: "Invitación a la revelación de Nuestro Hermoso Bebe 29 marzo",
     description:
-      "Queremos compartir esta alegria contigo en nuestra celebracion de revelación de nuestro bebe",
+      "Queremos compartir contigo la celebracion de revelación de sexo de nuestro bebe.",
     images: ["https://invitation-weld-two.vercel.app/img-1200.png"],
   },
 };
