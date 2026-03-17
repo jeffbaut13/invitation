@@ -16,12 +16,12 @@ const metadataBase = new URL("https://invitation-weld-two.vercel.app");
 
 export const metadata: Metadata = {
   metadataBase,
-  title: "Invitación a la revelación de Nuestro Hermoso Bebe este 29 marzo",
+  title: "Invitación a la revelación de Nuestro Hermoso Bebe 29 marzo",
   description:
     "Acompañanos en este momento tan especial para revelar el sexo de nuestro hermoso bebe. Queremos compartir esta alegria contigo en nuestra celebracion.",
   openGraph: {
     type: "website",
-    title: "Invitación a la revelación de Nuestro Hermoso Bebe este 29 marzo",
+    title: "Invitación a la revelación de Nuestro Hermoso Bebe 29 marzo",
     description:
       "Acompañanos en este momento tan especial para revelar el sexo de nuestro hermoso bebe. Queremos compartir esta alegria contigo en nuestra celebracion.",
     images: [
@@ -35,7 +35,7 @@ export const metadata: Metadata = {
   },
   twitter: {
     card: "summary_large_image",
-    title: "Invitación a la revelación de Nuestro Hermoso Bebe este 29 marzo",
+    title: "Invitación a la revelación de Nuestro Hermoso Bebe 29 marzo",
     description:
       "Acompañanos en este momento tan especial para revelar el sexo de nuestro hermoso bebe. Queremos compartir esta alegria contigo en nuestra celebracion.",
     images: ["https://invitation-weld-two.vercel.app/img-1200.png"],
