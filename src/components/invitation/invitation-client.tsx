@@ -300,7 +300,7 @@ export default function InvitationClient({ slug }: Props) {
               </p>
             </div>
             <div
-              style={{ margin: "0.5rem 0" }}
+              style={{ margin: "0.7rem 0" }}
               className="flex flex-col items-center justify-center  "
             >
               <p className="invite-detail">Te confirmo la direccion</p>
@@ -310,6 +310,16 @@ export default function InvitationClient({ slug }: Props) {
               <p className="invite-detail">
                 Te esperamos el <strong>29 de marzo a las 3:00 pm</strong>
               </p>
+              <a
+                href="https://maps.app.goo.gl/bpxE7p8hkyPiU3q46?g_st=aw"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="invite-button invite-button--third"
+                style={{ margin: "0" }}
+              >
+                <MapPinHouse className="invite-button-icon" />
+                Ver en Google Maps
+              </a>
             </div>
             <div className="flex flex-col items-center justify-center">
               <p className="invite-detail">
@@ -319,16 +329,7 @@ export default function InvitationClient({ slug }: Props) {
                 <strong>{guest.detalle}</strong>
               </p>
             </div>
-            <a
-              href="https://maps.app.goo.gl/bpxE7p8hkyPiU3q46?g_st=aw"
-              target="_blank"
-              rel="noopener noreferrer"
-              className="invite-button invite-button--third"
-              style={{ margin: "0" }}
-            >
-              <MapPinHouse className="invite-button-icon" />
-              Ver en Google Maps
-            </a>
+
             <button
               type="button"
               style={{ margin: "0" }}
