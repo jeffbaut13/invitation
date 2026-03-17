@@ -294,10 +294,15 @@ export default function InvitationClient({ slug }: Props) {
             </div>
 
             <div className="invite-badge">Asistencia confirmada</div>
-            <div className="flex flex-col items-center justify-center gap">
+            <div className="flex flex-col items-center justify-center  ">
               <p className="invite-detail">
                 {guest.nombre} gracias por confirmar tu asistencia
               </p>
+            </div>
+            <div
+              style={{ margin: "0.5rem 0" }}
+              className="flex flex-col items-center justify-center  "
+            >
               <p className="invite-detail">Te confirmo la direccion</p>
               <p className="invite-detail">
                 <strong>Calle 38 sur # 29-20</strong>
@@ -305,8 +310,10 @@ export default function InvitationClient({ slug }: Props) {
               <p className="invite-detail">
                 Te esperamos el <strong>29 de marzo a las 3:00 pm</strong>
               </p>
+            </div>
+            <div className="flex flex-col items-center justify-center">
               <p className="invite-detail">
-                Nuestro baby te agradecerá si le regalas 
+                Nuestro baby te agradecerá si le regalas
               </p>
               <p className="invite-detail">
                 <strong>{guest.detalle}</strong>
