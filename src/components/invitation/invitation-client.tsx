@@ -10,6 +10,8 @@ import {
   X,
 } from "lucide-react";
 import animationDataGirl from "@/assets/animation.json";
+import dont from "@/assets/dont.json";
+import yes from "@/assets/yes.json";
 import animationDataBoy from "@/assets/animation-two.json";
 import LottieAnimation from "../lottie-animation";
 
@@ -182,9 +184,9 @@ export default function InvitationClient({ slug }: Props) {
 
   if (error || !guest) {
     return (
-      <main className="invite-shell">
+      <main className="invite-shell ">
         <motion.section
-          className="invite-card invite-card--center"
+          className="invite-card invite-card--center flex justify-center items-center flex-col"
           initial="initial"
           animate="animate"
           variants={cardVariants}
@@ -222,13 +224,17 @@ export default function InvitationClient({ slug }: Props) {
             </picture>
             <div className="invite-container">
               <div>
-                <div className="invite-space"  />
+                <div className="invite-space" />
                 <h1 className="invite-title">{title}</h1>
               </div>
 
               <div className="invite-confirmacion flex justify-center items-center flex-col justify-between">
-                <p className="invite-detail">El baby te agradecera si le regalas:</p>
-                <p className="invite-detail invite-detail--bold">{guest.detalle}</p>
+                <p className="invite-detail">
+                  El baby te agradecera si le regalas:
+                </p>
+                <p className="invite-detail invite-detail--bold">
+                  {guest.detalle}
+                </p>
                 <div className="invite-badge">¿Nos acompañas?</div>
                 <div className="invite-actions">
                   <button
@@ -269,19 +275,19 @@ export default function InvitationClient({ slug }: Props) {
         {viewState === "asistir" ? (
           <motion.section
             key="accepted"
-            className="invite-card invite-card--center"
+            className="invite-card invite-card--center flex justify-center items-center flex-col"
             initial="initial"
             animate="animate"
             exit="exit"
             variants={cardVariants}
             transition={{ duration: 0.35 }}
           >
-            <CalendarCheck2 className="invite-icon invite-icon--success" />
+            <LottieAnimation animationData={yes} />
             <div className="invite-badge">Asistencia confirmada</div>
-            <h1 className="invite-title">
+            <h1 className="invite-detail">
               Gracias por confirmar tu asistencia
             </h1>
-            <p className="invite-detail">{guest.nombre}</p>
+            <p className="invite-title">{guest.nombre}</p>
             <button
               type="button"
               className="invite-button invite-button--ghost"
@@ -296,17 +302,17 @@ export default function InvitationClient({ slug }: Props) {
         {viewState === "no asistir" ? (
           <motion.section
             key="declined"
-            className="invite-card invite-card--center"
+            className="invite-card invite-card--center flex justify-center items-center flex-col"
             initial="initial"
             animate="animate"
             exit="exit"
             variants={cardVariants}
             transition={{ duration: 0.35 }}
           >
-            <CircleX className="invite-icon invite-icon--danger" />
+            <LottieAnimation animationData={dont} />
             <div className="invite-badge">Respuesta registrada</div>
-            <h1 className="invite-title">Lamentamos que no puedas asistir</h1>
-            <p className="invite-detail">{guest.nombre}</p>
+            <h1 className="invite-detail">Lamentamos que no puedas asistir</h1>
+            <p className="invite-title">{guest.nombre}</p>
             <button
               type="button"
               className="invite-button invite-button--ghost"

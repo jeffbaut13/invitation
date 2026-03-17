@@ -1,6 +1,7 @@
 import { google } from "googleapis";
 
-const SHEET_ID = process.env.GOOGLE_SHEET_ID ?? "1DEjNQFW62ICIjcqT7g1JeAPwCIMpG1Hdt9Ed6_BXAY0";
+const SHEET_ID =
+  process.env.GOOGLE_SHEET_ID ?? "1DEjNQFW62ICIjcqT7g1JeAPwCIMpG1Hdt9Ed6_BXAY0";
 const SHEET_NAME = process.env.GOOGLE_SHEET_NAME ?? "invitados";
 
 type GuestRow = {
@@ -33,10 +34,10 @@ function getSheetsClient() {
 
   const auth = new google.auth.GoogleAuth({
     credentials: {
-      project_id: projectId,
       client_email: clientEmail,
       private_key: privateKey,
     },
+    projectId,
     scopes: ["https://www.googleapis.com/auth/spreadsheets"],
   });
 
@@ -85,7 +86,10 @@ export async function findGuestBySlug(slug: string) {
   return guest ?? null;
 }
 
-export async function updateGuestAttendance(slug: string, decision: "asistir" | "no asistir") {
+export async function updateGuestAttendance(
+  slug: string,
+  decision: "asistir" | "no asistir"
+) {
   const guest = await findGuestBySlug(slug);
 
   if (!guest) {
