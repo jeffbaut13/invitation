@@ -17,26 +17,26 @@ const metadataBase = siteUrl ? new URL(siteUrl) : undefined;
 
 export const metadata: Metadata = {
   metadataBase,
-  title: "Revelacion de nuestro bebe",
-  description: "Acompañanos en la revelacion de nuestro hermoso bebe",
+  title: "Revelacion de Nuestro Hermoso Bebe - Te Esperamos",
+  description: "Acompañanos en este momento tan especial para revelar el sexo de nuestro hermoso bebe. Queremos compartir esta alegria contigo en nuestra celebracion.",
   openGraph: {
     type: "website",
-    title: "Revelacion de nuestro bebe",
-    description: "Acompañanos en la revelacion de nuestro hermoso bebe",
+    title: "Revelacion de Nuestro Hermoso Bebe - Te Esperamos",
+    description: "Acompañanos en este momento tan especial para revelar el sexo de nuestro hermoso bebe. Queremos compartir esta alegria contigo en nuestra celebracion.",
     images: [
       {
-        url: "/img-500.png",
-        width: 500,
-        height: 500,
+        url: "/img-1200.png",
+        width: 1200,
+        height: 630,
         type: "image/png",
       },
     ],
   },
   twitter: {
     card: "summary_large_image",
-    title: "Revelacion de nuestro bebe",
-    description: "Acompañanos en la revelacion de nuestro hermoso bebe",
-    images: ["/img-500.png"],
+    title: "Revelacion de Nuestro Hermoso Bebe - Te Esperamos",
+    description: "Acompañanos en este momento tan especial para revelar el sexo de nuestro hermoso bebe. Queremos compartir esta alegria contigo en nuestra celebracion.",
+    images: ["/img-1200.png"],
   },
 };
 
