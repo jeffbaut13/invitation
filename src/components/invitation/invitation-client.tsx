@@ -6,6 +6,7 @@ import {
   CalendarCheck2,
   CircleX,
   LoaderCircle,
+  MapPinHouse,
   RefreshCcw,
   X,
 } from "lucide-react";
@@ -275,7 +276,7 @@ export default function InvitationClient({ slug }: Props) {
         {viewState === "asistir" ? (
           <motion.section
             key="accepted"
-            className="invite-card invite-card--center flex justify-center items-center flex-col"
+            className="invite-card invite-card--center flex justify-center items-center flex-col gap"
             initial="initial"
             animate="animate"
             exit="exit"
@@ -284,12 +285,29 @@ export default function InvitationClient({ slug }: Props) {
           >
             <LottieAnimation animationData={yes} />
             <div className="invite-badge">Asistencia confirmada</div>
-            <h1 className="invite-detail">
-              Gracias por confirmar tu asistencia
-            </h1>
-            <p className="invite-title">{guest.nombre}</p>
+
+            <p className="invite-detail">
+              {guest.nombre} gracias por confirmar tu
+              asistencia
+            </p>
+            <p className="invite-detail">Te confirmo la direccion</p>
+            <p className="invite-title">Calle 38 sur # 29-20</p>
+            <p className="invite-detail">
+              Te esperamos <strong>3:00 pm</strong>
+            </p>
+            <a
+              href="https://maps.app.goo.gl/bpxE7p8hkyPiU3q46?g_st=aw"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="invite-button invite-button--third"
+              style={{ margin: "0" }}
+            >
+              <MapPinHouse className="invite-button-icon" />
+              Ver en Google Maps
+            </a>
             <button
               type="button"
+              style={{ margin: "0" }}
               className="invite-button invite-button--ghost"
               onClick={openDecisionModal}
             >
@@ -356,7 +374,7 @@ export default function InvitationClient({ slug }: Props) {
                 Selecciona tu nueva respuesta
               </h2>
               <p className="invite-muted">
-                Tu eleccion se actualizara inmediatamente en la lista de
+                Tu eleccion se actualizara inmediatamente en nuestra lista de
                 invitados.
               </p>
 

@@ -18,13 +18,14 @@
 }
 
 html {
-  min-height: 100%;
+  height: 100dvh;
   font-size: 16px;
+  overflow: hidden;
 }
 
 body {
   margin: 0;
-  min-height: 100vh;
+  min-height: 100dvh;
   font-family: var(--font-body), sans-serif;
   color: var(--text);
   background:
@@ -58,7 +59,10 @@ body {
 .flex-col {
   flex-direction: column;
 }
-
+a {
+  color: inherit;
+  text-decoration: none;
+}
 button {
   font: inherit;
 }
@@ -191,9 +195,17 @@ button {
 .invite-button--primary:hover {
   background: var(--accent-strong);
 }
+.gap{
+  gap: 6px;
+}
 
 .invite-button--secondary {
   background: #fff;
+  color: var(--text);
+  border: 1px solid rgba(92, 63, 37, 0.16);
+}
+.invite-button--third {
+  background: #e6fee8;
   color: var(--text);
   border: 1px solid rgba(92, 63, 37, 0.16);
 }
