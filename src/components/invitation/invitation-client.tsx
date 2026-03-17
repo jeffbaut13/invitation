@@ -283,18 +283,35 @@ export default function InvitationClient({ slug }: Props) {
             variants={cardVariants}
             transition={{ duration: 0.35 }}
           >
-            <LottieAnimation animationData={yes} />
-            <div className="invite-badge">Asistencia confirmada</div>
+            <div
+              style={{
+                width: "22rem",
+                display: "flex",
+                justifyContent: "center",
+              }}
+            >
+              <LottieAnimation animationData={yes} />
+            </div>
 
-            <p className="invite-detail">
-              {guest.nombre} gracias por confirmar tu
-              asistencia
-            </p>
-            <p className="invite-detail">Te confirmo la direccion</p>
-            <p className="invite-title">Calle 38 sur # 29-20</p>
-            <p className="invite-detail">
-              Te esperamos <strong>3:00 pm</strong>
-            </p>
+            <div className="invite-badge">Asistencia confirmada</div>
+            <div className="flex flex-col items-center justify-center gap">
+              <p className="invite-detail">
+                {guest.nombre} gracias por confirmar tu asistencia
+              </p>
+              <p className="invite-detail">Te confirmo la direccion</p>
+              <p className="invite-detail">
+                <strong>Calle 38 sur # 29-20</strong>
+              </p>
+              <p className="invite-detail">
+                Te esperamos el <strong>29 de marzo a las 3:00 pm</strong>
+              </p>
+              <p className="invite-detail">
+                Nuestro baby te agradecerá si le regalas 
+              </p>
+              <p className="invite-detail">
+                <strong>{guest.detalle}</strong>
+              </p>
+            </div>
             <a
               href="https://maps.app.goo.gl/bpxE7p8hkyPiU3q46?g_st=aw"
               target="_blank"
