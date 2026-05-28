@@ -5,6 +5,7 @@ import { AnimatePresence, motion } from "framer-motion";
 import {
   CalendarCheck2,
   CircleX,
+  Heart,
   LoaderCircle,
   MapPinHouse,
   RefreshCcw,
@@ -214,30 +215,69 @@ export default function InvitationClient({ slug }: Props) {
             variants={cardVariants}
             transition={{ duration: 0.35 }}
           >
+            <div className="overlay" />
             <div className="absolute invite-animation-container--girl">
               <LottieAnimation animationData={animationDataGirl} />
             </div>
-            <div className="absolute invite-animation-container--boy">
-              <LottieAnimation animationData={animationDataBoy} />
-            </div>
-            <picture className="invite-image-container invite-image-container--absolute">
-              <img className="img" src="/images/target.png" alt="" />
-            </picture>
-            <div className="invite-container">
-              <div>
-                <div className="invite-space" />
-                <h1 className="invite-title">{title}</h1>
-              </div>
 
-              <div className="invite-confirmacion flex justify-center items-center flex-col justify-between">
-                <p className="invite-detail">
-                  Nuestro baby te agradecera si le regalas:
-                </p>
-                <p className="invite-detail invite-detail--bold">
-                  {guest.detalle}
-                </p>
-                <div className="invite-badge">¿Nos acompañas?</div>
-                <div className="invite-actions">
+            <picture className="invite-image-container invite-image-container--absolute">
+              <video className="video" autoPlay loop muted playsInline>
+                <source src="/videos/target.mp4" type="video/mp4" />
+              </video>
+            </picture>
+            <div className="invite-container invite-container--pending">
+              <div className="invite-confirmacion invite-confirmacion--reel">
+                <div className="invite-reel-copy">
+                  <h1 style={{ fontSize: "2rem" }} className="invite-title">
+                    {title}
+                  </h1>
+                  <p style={{ margin: "0.3rem 0" }} className="invite-detail">
+                    ¡Una dulce espera está por terminar! 🌸
+                  </p>
+                  <p className="invite-detail">
+                    Celebremos juntos la llegada de nuestra hermosa Valeria.
+                  </p>
+                </div>
+
+                <div className="invite-reel-event-grid">
+                  <div className="invite-reel-date-column">
+                    <h2 className="invite-title">20</h2>
+                    <p className="invite-detail">Junio</p>
+                  </div>
+
+                  <div className="invite-reel-meta-column">
+                    <p className="invite-detail">⏰ 5:00 p.m.</p>
+                    <p className="invite-detail invite-reel-address">
+                      📍 transversal 74 D No 40 - H 14 sur
+                    </p>
+                    <a
+                      href="https://maps.app.goo.gl/Bvs9bHeoJgU1uTNs7?g_st=aw"
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      style={{
+                        fontSize: "0.875rem",
+                        display: "inline-flex",
+                        alignItems: "center",
+                        color: "var(--muted)",
+                      }}
+                    >
+                      <MapPinHouse className="invite-button-icon" />
+                      Ver en Google Maps
+                    </a>
+                  </div>
+                </div>
+
+                {/* <div
+                  className="invite-reel-footer"
+                  style={{ margin: "0.5rem 0" }}
+                >
+                  <p className="invite-detail">
+                    Regalo sugerido: <strong>{guest.detalle}</strong>
+                  </p>
+                  <p className="invite-detail">¿Deseas acompañar a Valeria?</p>
+                </div> */}
+
+                <div className="invite-actions invite-actions--pending">
                   <button
                     type="button"
                     className="invite-button invite-button--primary"
@@ -247,7 +287,7 @@ export default function InvitationClient({ slug }: Props) {
                     {submitting === "asistir" ? (
                       <LoaderCircle className="invite-button-icon invite-spin" />
                     ) : (
-                      <CalendarCheck2 className="invite-button-icon" />
+                      <Heart className="invite-button-icon" />
                     )}
                     Asistir
                   </button>
@@ -295,46 +335,64 @@ export default function InvitationClient({ slug }: Props) {
 
             <div className="invite-badge">Asistencia confirmada</div>
             <div className="flex flex-col items-center justify-center  ">
-              <p className="invite-detail">
-                {guest.nombre} gracias por confirmar tu asistencia
+              <p className="invite-detail_dark">
+                <strong>{guest.nombre}</strong> gracias por confirmar tu
+                asistencia
               </p>
             </div>
             <div
               style={{ margin: "0.7rem 0" }}
               className="flex flex-col items-center justify-center  "
             >
-              <p className="invite-detail">
-                Te esperamos el <strong>29 de marzo a las 3:00 pm</strong>
+              <p className="invite-detail_dark">
+                Te esperamos el <strong>20 de junio a las 5:00 pm</strong>
               </p>
-              <p className="invite-detail">Te confirmo la direccion</p>
-              <p className="invite-detail">
-                <strong>Calle 38 sur # 29-20</strong>
+              <p className="invite-detail_dark">Te confirmo la direccion</p>
+              <p className="invite-detail_dark">
+                <strong> transversal 74 D No 40 - H 14 sur</strong>
               </p>
-              
+
               <a
-                href="https://maps.app.goo.gl/bpxE7p8hkyPiU3q46?g_st=aw"
+                href="https://maps.app.goo.gl/Bvs9bHeoJgU1uTNs7?g_st=aw"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="invite-button invite-button--third"
-                style={{ margin: "0" }}
+                style={{
+                  fontSize: "0.875rem",
+                  display: "inline-flex",
+                  alignItems: "center",
+                  color: "var(--text)",
+                  fontWeight: "900",
+                  marginTop: "1rem",
+                }}
               >
                 <MapPinHouse className="invite-button-icon" />
                 Ver en Google Maps
               </a>
             </div>
             <div className="flex flex-col items-center justify-center">
-              <p className="invite-detail">
+              <p className="invite-detail_dark">
                 Nuestro baby te agradecerá si le regalas
               </p>
-              <p className="invite-detail">
+              <p
+                className="invite-detail_dark"
+                style={{ fontSize: "0.9rem", marginTop: "1rem" }}
+              >
                 <strong>{guest.detalle}</strong>
               </p>
             </div>
 
             <button
               type="button"
-              style={{ margin: "0" }}
-              className="invite-button invite-button--ghost"
+              style={{
+                margin: "0",
+                background: "var(--danger)",
+                color: "var(--muted)",
+                fontSize: "1rem",
+                borderRadius: "999px",
+                gap: "0.5rem",
+                padding: "0.5rem 0.5rem",
+              }}
+              className="invite-button--ghost flex justify-center items-center"
               onClick={openDecisionModal}
             >
               <X className="invite-button-icon" />
@@ -348,6 +406,7 @@ export default function InvitationClient({ slug }: Props) {
             key="declined"
             className="invite-card invite-card--center flex justify-center items-center flex-col"
             initial="initial"
+            style={{ gap: "1rem" }}
             animate="animate"
             exit="exit"
             variants={cardVariants}
@@ -355,11 +414,26 @@ export default function InvitationClient({ slug }: Props) {
           >
             <LottieAnimation animationData={dont} />
             <div className="invite-badge">Respuesta registrada</div>
-            <h1 className="invite-detail">Lamentamos que no puedas asistir</h1>
-            <p className="invite-title">{guest.nombre}</p>
+            <p className="invite-detail_dark">
+              <strong>{guest.nombre}</strong> Lamentamos que no puedas asistir
+            </p>
+
+            <p className="invite-detail_dark">
+              Cuando quieras vuelve al link que te envié y cambia tu decisión
+              aquí:
+            </p>
             <button
               type="button"
-              className="invite-button invite-button--ghost"
+              style={{
+                margin: "0",
+                background: "var(--muted)",
+                color: "var(--text)",
+                fontSize: "1rem",
+                borderRadius: "999px",
+                gap: "0.5rem",
+                padding: "0.5rem 0.5rem",
+              }}
+              className="invite-button--ghost flex justify-center items-center"
               onClick={openDecisionModal}
             >
               <RefreshCcw className="invite-button-icon" />
@@ -399,7 +473,10 @@ export default function InvitationClient({ slug }: Props) {
               <h2 className="invite-modal-title">
                 Selecciona tu nueva respuesta
               </h2>
-              <p className="invite-muted">
+              <p
+                style={{ marginBottom: "1rem", fontSize: "0.9rem" }}
+                className="invite-detail_dark"
+              >
                 Tu eleccion se actualizara inmediatamente en nuestra lista de
                 invitados.
               </p>
@@ -407,7 +484,16 @@ export default function InvitationClient({ slug }: Props) {
               <div className="invite-actions invite-actions--stack">
                 <button
                   type="button"
-                  className="invite-button invite-button--primary"
+                  style={{
+                    margin: "0",
+                    background: "var(--card)",
+                    color: "var(--text)",
+                    fontSize: "1rem",
+                    borderRadius: "999px",
+                    gap: "0.5rem",
+                    padding: "0.5rem 0.5rem",
+                  }}
+                  className="invite-button--ghost flex justify-center items-center"
                   onClick={() => submitDecision("asistir")}
                   disabled={submitting !== null}
                 >
@@ -421,7 +507,16 @@ export default function InvitationClient({ slug }: Props) {
 
                 <button
                   type="button"
-                  className="invite-button invite-button--secondary"
+                  style={{
+                    margin: "0",
+                    background: "var(--danger)",
+                    color: "var(--muted)",
+                    fontSize: "1rem",
+                    borderRadius: "999px",
+                    gap: "0.5rem",
+                    padding: "0.5rem 0.5rem",
+                  }}
+                  className="invite-button--ghost flex justify-center items-center"
                   onClick={() => submitDecision("no asistir")}
                   disabled={submitting !== null}
                 >
