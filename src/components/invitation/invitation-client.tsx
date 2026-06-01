@@ -251,7 +251,7 @@ export default function InvitationClient({ slug }: Props) {
                       📍 Transversal 74 D No 40 - H 14 sur
                     </p>
                     <p className="invite-detail invite-reel-address">
-                      🎉 Salon Social Primer Piso
+                      🎉 Salón Social Conjunto Tonoli - Primer piso
                     </p>
                     <a
                       href="https://maps.app.goo.gl/Bvs9bHeoJgU1uTNs7?g_st=aw"
@@ -354,7 +354,7 @@ export default function InvitationClient({ slug }: Props) {
               <p className="invite-detail_dark">
                 <strong>Transversal 74 D No 40 - H 14 sur</strong>
               </p>
-              <p className="invite-detail_dark">Salon Social Primer Piso</p>
+              <p className="invite-detail_dark">Salón Social Conjunto Tonoli - Primer piso</p>
 
               <a
                 href="https://maps.app.goo.gl/Bvs9bHeoJgU1uTNs7?g_st=aw"
