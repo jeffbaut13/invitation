@@ -248,7 +248,10 @@ export default function InvitationClient({ slug }: Props) {
                   <div className="invite-reel-meta-column">
                     <p className="invite-detail">⏰ 5:00 p.m.</p>
                     <p className="invite-detail invite-reel-address">
-                      📍 transversal 74 D No 40 - H 14 sur
+                      📍 Transversal 74 D No 40 - H 14 sur
+                    </p>
+                    <p className="invite-detail invite-reel-address">
+                      Salon Social Primer Piso
                     </p>
                     <a
                       href="https://maps.app.goo.gl/Bvs9bHeoJgU1uTNs7?g_st=aw"
@@ -349,8 +352,9 @@ export default function InvitationClient({ slug }: Props) {
               </p>
               <p className="invite-detail_dark">Te confirmo la direccion</p>
               <p className="invite-detail_dark">
-                <strong> transversal 74 D No 40 - H 14 sur</strong>
+                <strong>Transversal 74 D No 40 - H 14 sur</strong>
               </p>
+              <p className="invite-detail_dark">Salon Social Primer Piso</p>
 
               <a
                 href="https://maps.app.goo.gl/Bvs9bHeoJgU1uTNs7?g_st=aw"
@@ -371,7 +375,7 @@ export default function InvitationClient({ slug }: Props) {
             </div>
             <div className="flex flex-col items-center justify-center">
               <p className="invite-detail_dark">
-                Nuestro baby te agradecerá si le regalas
+                Valeria te agradecerá si le regalas:
               </p>
               <p
                 className="invite-detail_dark"
